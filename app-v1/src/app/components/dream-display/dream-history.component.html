@@ -1,0 +1,16 @@
+<div class="history-container">
+    <h2>Your Dream History</h2>
+    <button mat-raised-button color="warn" (click)="logout()">Logout</button>
+    <button mat-raised-button color="primary" routerLink="/dream">Create New Dream</button>
+    <div *ngIf="dreams.length === 0 && !error">No dreams yet. Start crafting!</div>
+    <mat-card *ngFor="let dream of dreams" class="dream-card">
+        <mat-card-header>
+            <mat-card-title>{{ dream.prompt }}</mat-card-title>
+            <mat-card-subtitle>{{ dream.created_at | date:'medium' }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{ dream.output }}</p>
+        </mat-card-content>
+    </mat-card>
+    <p *ngIf="error" class="error">{{ error }}</p>
+</div>

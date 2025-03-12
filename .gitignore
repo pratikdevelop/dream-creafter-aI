@@ -1,0 +1,19 @@
+# Exclude the trained DistilBERT model directory
+/dreamcrafter_model/
+
+# Exclude a GPT-2 related directory (if applicable)
+/gpt2_dreamcrafter/
+
+# Additional common exclusions for Python/ML projects
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+*.env
+*.log
+./dreamcrafter_results/
+./logs/
+*.zip

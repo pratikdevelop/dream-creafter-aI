@@ -1,0 +1,22 @@
+<div class="max-w-2xl mx-auto p-6 text-center">
+    <h2 class="text-2xl font-bold mb-4">Craft Your Dream</h2>
+    <div class="flex justify-center gap-4 mb-4">
+        <button mat-raised-button color="warn" (click)="logout()">Logout</button>
+        <button mat-raised-button color="accent" routerLink="/history">View History</button>
+    </div>
+    <mat-form-field class="w-full mb-4">
+        <mat-label>Enter your dream prompt</mat-label>
+        <textarea matInput [(ngModel)]="prompt" name="prompt" class="h-24"></textarea>
+    </mat-form-field>
+    <mat-form-field class="w-full mb-4">
+        <mat-label>Dream Style</mat-label>
+        <mat-select [(ngModel)]="style" name="style">
+            <mat-option value="default">Default</mat-option>
+            <mat-option value="surreal">Surreal</mat-option>
+            <mat-option value="calm">Calm</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="generateDream()" class="w-full">Craft Dream</button>
+    <p *ngIf="dreamOutput" class="mt-4 text-gray-700">{{ dreamOutput }}</p>
+    <p *ngIf="error" class="mt-4 text-red-500">{{ error }}</p>
+</div>

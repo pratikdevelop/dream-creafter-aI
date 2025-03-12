@@ -1,0 +1,17 @@
+<div class="flex flex-col w-full h-[100vh] relative items-center justify-center bg-slate-800">
+    <form (ngSubmit)="login()" class="flex flex-col space-y-6 w-full max-w-2xl p-4 bg-white
+    rounded-lg shadow-md p-8 space-y-8">
+    <span class="text-3xl ">Log In to DreamCrafter</span>
+        <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput [(ngModel)]="username" name="username" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput [(ngModel)]="password" name="password" type="password" required>
+        </mat-form-field>
+        <button mat-flat-button color="primary" type="submit">Log In</button>
+        <p *ngIf="error" class="error">{{ error }}</p>
+        <p>Need an account? <a class="text-blue-600" routerLink="/signup">Sign up</a></p>
+</form>
+</div>
